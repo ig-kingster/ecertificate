@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Participation</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        }
+        
+        .certificate {
+            width: 900px;
+            height: 630px;
+            position: relative;
+            border: 15px solid #0c2d5a;
+            padding: 60px 40px 40px 40px; /* Increased top padding to accommodate logo */
+            box-sizing: border-box;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: 
+                linear-gradient(to bottom, rgba(255,215,0,0.1) 1px, transparent 1px);
+            background-size: 100% 40px;
+            overflow: hidden; /* Prevent content from spilling out */
+        }
+        
+        .gold-border {
+            position: absolute;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+            border: 3px solid #d4af37;
+            top: 15px;
+            left: 15px;
+            pointer-events: none;
+        }
+        
+        .corner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #d4af37;
+            pointer-events: none;
+        }
+        
+        .corner-tl {
+            top: -1px;
+            left: -1px;
+            border-right: none;
+            border-bottom: none;
+        }
+        .corner-tr {
+            top: -1px;
+            right: -1px;
+            border-left: none;
+            border-bottom: none;
+        }
+        .corner-bl {
+            bottom: -1px;
+            left: -1px;
+            border-right: none;
+            border-top: none;
+        }
+        .corner-br {
+            bottom: -1px;
+            right: -1px;
+            border-left: none;
+            border-top: none;
+        }
+        
+        .logo {
+            height: 70px; /* Reduced from 80px to fit inside */
+            width: auto;
+            /* margin: 0 auto 10px; */
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+            position: relative; /* Ensure it stays within container */
+        }
+        
+        .title {
+            font-size: 34px;
+            color: #0c2d5a;
+            margin: 10px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #d4af37;
+            margin: 5px 0;
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        .institution {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #333;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .department {
+            font-size: 16px;
+            margin: 10px 0 30px 0;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+        
+        .certify {
+            font-size: 18px;
+            margin: 30px 0 10px 0;
+            color: #444;
+        }
+        
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            color: #0c2d5a;
+            margin: 15px 0;
+            padding: 10px 0;
+            border-top: 2px solid #d4af37;
+            border-bottom: 2px solid #d4af37;
+            letter-spacing: 1px;
+        }
+        
+        .participation {
+            font-size: 18px;
+            margin: 15px 0 5px 0;
+            color: #444;
+        }
+        
+        .participated-item {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0c2d5a;
+            margin: 10px 0 30px 0;
+            font-style: italic;
+            padding: 0 20px;
+        }
+        
+        .date {
+            font-size: 16px;
+            margin: 0px 0 40px 0; /* Adjusted to keep inside bottom border */
+            color: #555;
+            letter-spacing: 1px;
+            position: relative; /* Ensure it stays within container */
+        }
+        
+        .signatures {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .signature-line {
+            text-align: center;
+            width: 40%;
+        }
+        
+        .signature-line hr {
+            width: 180px;
+            border: none;
+            border-top: 1px solid #999;
+            margin: 5px auto 10px auto;
+        }
+        
+        .signature-title {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+        
+        .seal {
+            position: absolute;
+            right: 70px;
+            bottom: 70px;
+            width: 70px;
+            opacity: 0.85;
+        }
+        
+        .watermark {
+            position: absolute;
+            opacity: 0.08;
+            font-size: 140px;
+            color: #0c2d5a;
+            transform: rotate(-30deg);
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+            font-weight: bold;
+            font-family: "Times New Roman", serif;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="gold-border"></div>
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        
+        <div class="watermark">SJAHER</div>
+        
+        <div class="header">
+            <!-- <img src="https://i.ibb.co/j9GNstdg/logo-removebg-preview.png" alt="Institution Logo" class="logo"> -->
+            <h1 class="title">Certificate of Participation</h1>
+            <div class="subtitle">TechTrix 2025</div>
+            <div class="institution">St. Joseph's Academy of Higher Education & Research,Moolamattom</div>
+            <div class="department">Organized by Department of Computer Science</div>
+        </div>
+
+        <div class="certify">This is to certify that</div>
+        <div class="name">{name}</div>
+        
+        <div class="participation">has successfully participated in</div>
+        <div class="participated-item">{participation_item}</div>
+        
+        <div class="date">Date: {date}</div>
+        
+       
+    </div>
+</body>
+</html>
